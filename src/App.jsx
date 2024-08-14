@@ -3,14 +3,14 @@ import NavigationBar from "./components/NavigationBar";
 import DetailCollection from "./routes/DetailCollection";
 import Ticket from "./routes/Ticket";
 import HomeIn from "./HomeIn";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <div>
-      <Payment />
-      <DetailCollection />
-      <Ticket />
       <HomeIn />
+
+      <Outlet />
     </div>
   );
 }

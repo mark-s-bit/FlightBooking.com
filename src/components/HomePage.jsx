@@ -1,5 +1,6 @@
 import React from "react";
 import NavigationBar from "./NavigationBar";
+
 function HomePage() {
   return (
     <div
@@ -8,7 +9,7 @@ function HomePage() {
         borderTopLeftRadius: "1%",
         borderTopRightRadius: "1%",
         position: "relative",
-        height: "87%",
+        height: "100%",
         margin: "1% 1% 2% 1%",
         backgroundColor: "black",
       }}
@@ -22,7 +23,7 @@ function HomePage() {
           borderBlockColor: "white",
           height: "98%",
           backgroundColor: "#1E1D1B",
-          margin: "2%",
+          margin: "",
           borderTopLeftRadius: "1%",
           borderTopRightRadius: "1%",
         }}

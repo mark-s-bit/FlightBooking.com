@@ -12,9 +12,7 @@ function SearchFlight() {
           margin: "10% 5%",
           fontFamily: "sans-serif",
           color: "black",
-          background: "none",
           borderColor: "yellow",
-          borderRadius: "5%",
         }}
         name=""
         id=""

@@ -7,15 +7,25 @@ function DispalayAvailableFlights() {
     <div
       className="m-0"
       style={{
-        height: "100%",
+        overflowY: "auto",
+        height: "100vh",
         width: "100%",
         margin: "0px",
         padding: "0px",
         backgroundColor: "black",
+        flexWrap: "wrap",
       }}
     >
       <SearchFlight />
-      <FlightDetails />
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap" /* Allow cards to wrap */,
+          gap: "20px",
+        }}
+      >
+        <FlightDetails />
+      </div>
     </div>
   );
 }
