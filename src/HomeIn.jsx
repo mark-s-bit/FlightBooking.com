@@ -3,6 +3,7 @@ import HomePage from "./components/HomePage";
 import "bootstrap/dist/css/bootstrap.css";
 
 import DispalayAvailableFlights from "./components/DispalayAvailableFlights";
+import { Outlet } from "react-router-dom";
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
         <div className="col-sm-12 col-md-5">
           <DispalayAvailableFlights />
         </div>
+        <Outlet />
       </div>
     </>
   );
