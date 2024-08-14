@@ -1,5 +1,7 @@
 import "./App.css";
 import HomePage from "./components/HomePage";
+import "bootstrap/dist/css/bootstrap.css";
+
 import DispalayAvailableFlights from "./components/DispalayAvailableFlights";
 function App() {
   return (
