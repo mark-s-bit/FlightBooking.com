@@ -1,31 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import './NavigationBar.css'; // Import the CSS file
 
 function NavigationBar() {
   return (
-    <nav style={{ position: "relative", top: "4%", color: "white" }}>
-      <ul style={{ display: "flex", marginLeft: "5%", listStyleType: "none" }}>
-        <NavLink to={"/"}>
-          {" "}
-          <li
-            style={{
-              display: "flex",
-              marginRight: "5%",
-              color: "white",
-              textDecoration: "none",
-            }}
-          >
+    <nav>
+      <ul>
+        <NavLink to={"/"} className="nav-link">
+          <li className="nav-logo">
             <i className="fa-solid fa-plane-departure"></i>
             TravelTicketPro
           </li>
         </NavLink>
 
-        <NavLink to={"/"}>
-          <li style={{ color: "white", marginLeft: "18%" }}>Home</li>
+        <NavLink to={"/"} className="nav-link">
+          <li>Home</li>
         </NavLink>
-        <NavLink to={"/ticket"}>
-          {" "}
-          <li style={{ marginLeft: "18%" ,color:"white" }}>Ticket </li>
+        <NavLink to={"/ticket"} className="nav-link">
+          <li>Ticket</li>
         </NavLink>
       </ul>
     </nav>
