@@ -1,0 +1,139 @@
+{
+  "tickets": [
+    {
+      "id": 1,
+      "passenger_name": "John Doe",
+      "ticket_class": "Economy",
+      "airline": "Air Example",
+      "from": "New York",
+      "to": "Los Angeles",
+      "price": 299.99
+    },
+    {
+      "id": 2,
+      "passenger_name": "Alice Johnson",
+      "ticket_class": "Business",
+      "airline": "Sample Airways",
+      "from": "Chicago",
+      "to": "Miami",
+      "price": 749.99
+    },
+    {
+      "id": 3,
+      "passenger_name": "Emily Davis",
+      "ticket_class": "First",
+      "airline": "LuxAir",
+      "from": "San Francisco",
+      "to": "Tokyo",
+      "price": 1200.0
+    },
+    {
+      "id": 4,
+      "passenger_name": "Sophia Martinez",
+      "ticket_class": "Economy",
+      "airline": "SkyHigh Airlines",
+      "from": "London",
+      "to": "Paris",
+      "price": 450.0
+    },
+    {
+      "id": 5,
+      "passenger_name": "Olivia Lee",
+      "ticket_class": "Business",
+      "airline": "GlobalJet",
+      "from": "Sydney",
+      "to": "Auckland",
+      "price": 650.0
+    },
+    {
+      "id": 6,
+      "passenger_name": "Liam Thompson",
+      "ticket_class": "Economy",
+      "airline": "AirlineX",
+      "from": "Toronto",
+      "to": "Vancouver",
+      "price": 320.0
+    },
+    {
+      "id": 7,
+      "passenger_name": "Ava Robinson",
+      "ticket_class": "First",
+      "airline": "EliteFly",
+      "from": "Dubai",
+      "to": "New Delhi",
+      "price": 800.0
+    },
+    {
+      "id": 8,
+      "passenger_name": "Isabella Clark",
+      "ticket_class": "Business",
+      "airline": "PremiumAir",
+      "from": "Hong Kong",
+      "to": "Shanghai",
+      "price": 950.0
+    },
+    {
+      "id": 9,
+      "passenger_name": "Mia Walker",
+      "ticket_class": "Economy",
+      "airline": "FlyFast",
+      "from": "Berlin",
+      "to": "Madrid",
+      "price": 200.0
+    },
+    {
+      "id": 10,
+      "passenger_name": "Ethan King",
+      "ticket_class": "First",
+      "airline": "SkyLux",
+      "from": "Los Angeles",
+      "to": "Dubai",
+      "price": 1800.0
+    },
+    {
+      "id": 11,
+      "passenger_name": "Lily Scott",
+      "ticket_class": "Economy",
+      "airline": "JetStream",
+      "from": "Seattle",
+      "to": "Las Vegas",
+      "price": 275.0
+    },
+    {
+      "id": 12,
+      "passenger_name": "Samantha Carter",
+      "ticket_class": "Business",
+      "airline": "FastTrack",
+      "from": "Beijing",
+      "to": "Hong Kong",
+      "price": 890.0
+    },
+    {
+      "id": 13,
+      "passenger_name": "Lucas Hall",
+      "ticket_class": "First",
+      "airline": "StarFlyer",
+      "from": "New York",
+      "to": "Rome",
+      "price": 1500.0
+    },
+    {
+      "id": 14,
+      "passenger_name": "Chloe Green",
+      "ticket_class": "Economy",
+      "airline": "BudgetAir",
+      "from": "Amsterdam",
+      "to": "Brussels",
+      "price": 150.0
+    },
+    {
+      "id": 15,
+      "passenger_name": "Mason Lewis",
+      "ticket_class": "Business",
+      "airline": "ComfortJet",
+      "from": "Toronto",
+      "to": "Boston",
+      "price": 550.0
+    }
+  ]
+}
