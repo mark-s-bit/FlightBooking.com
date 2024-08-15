@@ -1,26 +1,18 @@
 import React from "react";
+import "./SearchFlight.css"; // Import the CSS file
 
 function SearchFlight() {
   return (
     <div>
-      <select style={{ margin: "10%" }} name="" id="">
+      <select className="SelectBox" >
         <option value="">Nairobi</option>
         <option value="">Nakuru</option>
       </select>
-      <select
-        style={{
-          margin: "10% 5%",
-          fontFamily: "sans-serif",
-          color: "black",
-          borderColor: "yellow",
-        }}
-        name=""
-        id=""
-      >
+      <select className="SelectBoxSecondary" >
         <option value="">Nairobi</option>
         <option value="">Nakuru</option>
       </select>
-      <input style={{ marginLeft: "5%" }} type="date"></input>
+      <input className="DateInput" type="date"></input>
       <button type="submit">Search</button>
     </div>
   );
