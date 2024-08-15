@@ -27,7 +27,11 @@ function FlightDetails() {
           <p style={{ color: "white" }} className="card-text">
             Starts From:$550
           </p>
-          <button className="btn btn-warning BookButton" type="click">
+          <button
+            onClick={() => onBookFlight()}
+            className="btn btn-warning BookButton"
+            type="button"
+          >
             Book Flight
           </button>
         </div>
@@ -42,10 +46,13 @@ function FlightDetails() {
           <h4 className="card-title">
             Nairobi <i className="fa-solid fa-plane"></i> Kigali
           </h4>
-          <p className="card-text">Starts From:$550</p>
+
+          <p style={{ color: "white" }} className="card-text">
+            Starts From:$550
+          </p>
           <button
             onClick={() => onBookFlight()}
-            style={{ marginLeft: "40%" }}
+            className="btn btn-warning BookButton"
             type="button"
           >
             Book Flight
