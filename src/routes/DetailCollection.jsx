@@ -25,16 +25,22 @@ function DetailCollection() {
           </div>
           <div className="form-row">
             <label>No. of people</label>
-            <input type="number" />
+            <input type="number" min="1"/>
           </div>
           <div className="form-row">
             <label>Bags</label>
-            <input type="number" />
-          </div>
+            <input type="number" min="0"/>
+            </div>
           <div className="form-row">
-            <label>Class</label>
-            <input type="text" />
-          </div>
+            <label htmlFor="class">Class</label>
+            <input list="classes" name="class" id="class" />
+            <datalist id="classes">
+              <option value="First Class" />
+              <option value="Economy" />
+              <option value="Business" />
+              </datalist>
+            </div>
+
           <div className="form-row">
             <label>Name</label>
             <input type="text" />
@@ -49,7 +55,7 @@ function DetailCollection() {
           </div>
           <div className="form-row">
             <label>Total</label>
-            <input type="text" className="total" placeholder="$120000" />
+            <input type="text" className="total"placeholder="$120000" />
           </div>
           <div className="form-buttons">
             <button className="back-btn" type="button">
