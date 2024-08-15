@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 function DispalayAvailableFlights() {
   const url = "http://localhost:3000/flights/";
   const [flights, setFlights] = useState([]);
+  let filterd;
 
   useEffect(() => {
     const fetchFlights = async () => {
@@ -21,13 +22,26 @@ function DispalayAvailableFlights() {
     fetchFlights();
   }, []);
 
-  console.log(flights);
+  const filterBySearch = (obj) => {
+    if (flights.length > 0) {
+      filterd = flights.filter(
+        (flight) =>
+          flight.from == obj.from &&
+          flight.to == obj.to &&
+          flight.date == obj.date
+      );
+    }
+  };
+
+  // console.log(flights);
 
   return (
     <div className="Container">
-      <SearchFlight />
+      <div className="searchFlights">
+        <SearchFlight flights={flights} filterBySearch={filterBySearch} />
+      </div>
       <div className="FlightsWrapper">
-        <FlightDetails flights={flights} />
+        <FlightDetails flights={filterd > 0 ? filterd : flights} />
       </div>
     </div>
   );

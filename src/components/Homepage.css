@@ -1,52 +1,51 @@
 /* HomePage.css */
 .HomeContainer {
-    border-top-left-radius: 1%;
-    border-top-right-radius: 1%;
-    position: relative;
-    height: 100%;
-    margin: 1% 1% 2% 1%;
-    background-color: black;
-  }
-  
-  .ContentContainer {
-    position: relative;
-    top: 2%;
-    border: 5px;
-    border-block-color: white;
-    height: 98%;
-    background-color: #1e1d1b;
-    margin: 0;
-    border-top-left-radius: 1%;
-    border-top-right-radius: 1%;
-  }
-  
-  .HeaderImage {
-    height: 37%;
-    width: 100%;
-    margin: 0;
-    border-radius: 1%;
-    filter: brightness(30%);
-  }
-  
-  .MainText {
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top: 10%;
-    margin-left: 10%;
-  }
-  
-  .SubHeader {
-    color: white;
-    margin-left: 30%;
-    font-size: 150%;
-    text-decoration: underline;
-  }
-  
-  .SecondImage {
-    height: 40%;
-    width: 50%;
-    margin: 0;
-    border-radius: 3%;
-  }
-  
+  border-top-left-radius: 1%;
+  border-top-right-radius: 1%;
+  position: relative;
+  height: 100%;
+  margin: 1% 1% 2% 1%;
+  background-color: black;
+}
+
+.ContentContainer {
+  position: relative;
+  top: 2%;
+  border: 5px;
+  border-block-color: white;
+  height: 98%;
+  background-color: #1e1d1b;
+  margin: 0;
+  border-top-left-radius: 1%;
+  border-top-right-radius: 1%;
+}
+
+.HeaderImage {
+  height: 37%;
+  width: 100%;
+  margin: 0;
+  border-radius: 1%;
+  filter: brightness(30%);
+}
+
+.MainText {
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 10%;
+  margin-left: 10%;
+}
+
+.SubHeader {
+  color: white;
+  margin-left: 30%;
+  font-size: 150%;
+  text-decoration: underline;
+}
+
+.SecondImage {
+  height: 40%;
+  width: 50%;
+  margin: 0;
+  border-radius: 3%;
+}
