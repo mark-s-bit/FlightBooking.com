@@ -1,6 +1,15 @@
 import React from "react";
+
+import NavigationBar from "./NavigationBar";
+import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
 import "./FlightDetails.css";
+
 function FlightDetails() {
+  const detail = useNavigate();
+  const onBookFlight = () => {
+    detail("/details");
+  };
   return (
     <>
       <h2 className="AvailableFlightsTitle">Available Flights</h2>
@@ -14,7 +23,10 @@ function FlightDetails() {
           <h4 className="card-title">
             Nairobi <i className="fa-solid fa-plane"></i> Kigali
           </h4>
-          <p className="card-text">Starts From:$550</p>
+
+            <p style={{ color: "white" }} className="card-text">
+            Starts From:$550
+          </p>
           <button className="btn btn-warning BookButton" type="click">
             Book Flight
           </button>
@@ -31,11 +43,17 @@ function FlightDetails() {
             Nairobi <i className="fa-solid fa-plane"></i> Kigali
           </h4>
           <p className="card-text">Starts From:$550</p>
-          <button className="btn btn-warning BookButton" type="click">
+       <button
+            onClick={() => onBookFlight()}
+            style={{ marginLeft: "40%" }}
+            type="button"
+          >>
+
             Book Flight
           </button>
         </div>
       </div>
+      
     </>
   );
 }
