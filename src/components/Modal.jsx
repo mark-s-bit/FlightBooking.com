@@ -16,7 +16,7 @@ const Modal = ({ isOpen, onClose, formData }) => {
       console.log("Booking confirmed:", formData);
       setIsLoading(false);
       onClose();
-      ticket("/ticket");
+      ticket("/payment");
     }, 3000);
   };
 

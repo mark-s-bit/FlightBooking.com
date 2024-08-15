@@ -14,8 +14,8 @@ function HomePage() {
         />
         <p className="MainText">
           Fly High Pay Low: TravelTicketPro flight Booking Experience
-          <p>Experience limitless flights with TravelTicketPro booking!</p>
         </p>
+        <p>Experience limitless flights with TravelTicketPro booking!</p>
         <p className="SubHeader">Simplifying Your Travel Arrangements</p>
         <div>
           <img
