@@ -1,12 +1,12 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Ticket.css';  
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Ticket.css";
 
 function Ticket() {
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
-    navigate('/'); // Navigate to the home page
+    navigate("/"); // Navigate to the home page
   };
 
   return (
@@ -37,13 +37,17 @@ function Ticket() {
           <input type="text" placeholder="$120000" className="total" />
         </div>
         <div className="form-buttons">
-          <button className="countdown-btn" onClick={handleHomeClick}>Home</button>
+          <button className="countdown-btn" onClick={handleHomeClick}>
+            Home
+          </button>
         </div>
         <div className="cancel-text">
-          <p>To Cancel Contact Us {" "}
-              <a href="https://aaes.aero/flight-support-services/">
-                FlightBooking.com
-              </a></p>
+          <p>
+            To Cancel Contact Us{" "}
+            <a href="https://aaes.aero/flight-support-services/">
+              FlightBooking.com
+            </a>
+          </p>
         </div>
       </div>
     </div>

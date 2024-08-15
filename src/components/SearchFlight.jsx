@@ -18,7 +18,7 @@ function SearchFlight({ flights,filterBySearch }) {
 
   return (
     <div className="search">
-      <h2 style={{ textDecoration: "underline" }}>Search </h2>
+      {/* <h2 style={{ textDecoration: "underline" }}>Search </h2> */}
       <input
         onChange={handleChange}
         placeholder="From"

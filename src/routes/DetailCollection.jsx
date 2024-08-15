@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Details.css";
 import logo from "../assets/logoo.png";
 import NavigationBar from "../components/NavigationBar";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Modal from "../components/Modal";
 
 function DetailCollection() {
@@ -21,8 +21,9 @@ function DetailCollection() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [flights, setFlights] = useState([]);
-
+  const [flights, setFlights] = useState({});
+  const location = useLocation();
+  const id = location.state;
   useEffect(() => {
     const fetchFlights = async () => {
       try {
@@ -31,14 +32,18 @@ function DetailCollection() {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        setFlights(data);
-        if (data.length > 0) {
-          setFormData({
-            from: data[0].from,
-            to: data[0].to,
-            date: data[0].date,
-            total: `$${data[0].cost}`,
-          });
+        const tis = data.filter((dat) => dat.id == id);
+        console.log(tis);
+        setFlights();
+        if (tis.length > 0) {
+          tis.map((ti) =>
+            setFormData({
+              from: ti.from,
+              to: ti.to,
+              date: ti.date,
+              total: ti.cost,
+            })
+          );
         }
       } catch (error) {
         setError(error);
@@ -67,7 +72,7 @@ function DetailCollection() {
   return (
     <div>
       <nav className="navbar">
-        <NavLink to={'/'}>
+        <NavLink to={"/"}>
           <div className="navbar-brand">
             <img src={logo} alt="TravelTicketPro Logo" className="nav-logo" />
             <span className="brand-name">TravelTicketPro</span>
@@ -77,30 +82,20 @@ function DetailCollection() {
       <form onSubmit={handleSubmit} className="Detailcontainer">
         <div className="booking-form">
           <div className="form-row-horizontal">
-            <input
-              name="from"
-              type="text"
-              value={formData.from}
-              readOnly
-            />
-            <input
-              name="to"
-              type="text"
-              value={formData.to}
-              readOnly
-            />
+            <input name="from" type="text" value={formData.from} readOnly />
+            <input name="to" type="text" value={formData.to} readOnly />
           </div>
           <div className="form-row">
-            <input
-              name="date"
-              type="date"
-              value={formData.date}
-              readOnly
-            />
+            <input name="date" type="date" value={formData.date} readOnly />
           </div>
           <div className="form-row">
             <label>No. of people</label>
-            <input name="people" type="number" onChange={handleChange} min="1" />
+            <input
+              name="people"
+              type="number"
+              onChange={handleChange}
+              min="1"
+            />
           </div>
           <div className="form-row">
             <label>Bags</label>
@@ -108,7 +103,12 @@ function DetailCollection() {
           </div>
           <div className="form-row">
             <label htmlFor="class">Class</label>
-            <input list="classes" name="class" id="class" onChange={handleChange} />
+            <input
+              list="classes"
+              name="class"
+              id="class"
+              onChange={handleChange}
+            />
             <datalist id="classes">
               <option value="First Class" />
               <option value="Economy" />

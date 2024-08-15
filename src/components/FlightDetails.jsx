@@ -7,8 +7,8 @@ import "./FlightDetails.css";
 
 function FlightDetails({ flights }) {
   const detail = useNavigate();
-  const onBookFlight = () => {
-    detail("/details");
+  const onBookFlight = (id) => {
+    detail("/details", { state: id });
   };
 
   return (
@@ -18,7 +18,6 @@ function FlightDetails({ flights }) {
         flights.map((flight) => {
           return (
             <div key={flight.id}>
-              
               <div className="FlightCard">
                 <img
                   src={flight.image}
@@ -36,7 +35,7 @@ function FlightDetails({ flights }) {
                     Starts From:${flight.cost}
                   </p>
                   <button
-                    onClick={() => onBookFlight()}
+                    onClick={() => onBookFlight(flight.id)}
                     className="btn btn-warning BookButton"
                     type="button"
                   >

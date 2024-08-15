@@ -28,6 +28,7 @@ input {
   color: white;
   box-sizing: border-box;
 }
-.search { 
+.search {
   margin-left: 12%;
+  display: flex;
 }
