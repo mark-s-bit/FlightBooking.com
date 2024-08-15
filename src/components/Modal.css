@@ -1,0 +1,67 @@
+/* Modal.css */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    color: white;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px; /* Space above buttons */
+  }
+  
+  .modal button {
+    background-color: #d3d824;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 5px; /* Space between buttons */
+  }
+  
+  .booking-details {
+    margin-top: 20px; /* Space above details */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+  }
+  
+  .detail-item {
+    display: flex; /* Use flexbox for item alignment */
+    justify-content: space-between; /* Space out label and data */
+    width: 100%; /* Full width for each item */
+    margin: 5px 0; /* Space between items */
+  }
+  
+  .data {
+    background: #444; /* Same background as modal */
+    border: 2px solid #d3d824; /* Border color */
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 10px; /* Space between label and data */
+    flex: 1; /* Take remaining space */
+  }
+  
+  .spinner {
+    font-size: 20px;
+    color: #d3d824; /* Spinner color */
+    margin: 20px 0; /* Space around spinner */
+  }
+  
