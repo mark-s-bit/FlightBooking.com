@@ -24,7 +24,7 @@ function FlightDetails() {
             Nairobi <i className="fa-solid fa-plane"></i> Kigali
           </h4>
 
-            <p style={{ color: "white" }} className="card-text">
+          <p style={{ color: "white" }} className="card-text">
             Starts From:$550
           </p>
           <button className="btn btn-warning BookButton" type="click">
@@ -43,17 +43,15 @@ function FlightDetails() {
             Nairobi <i className="fa-solid fa-plane"></i> Kigali
           </h4>
           <p className="card-text">Starts From:$550</p>
-       <button
+          <button
             onClick={() => onBookFlight()}
             style={{ marginLeft: "40%" }}
             type="button"
-          >>
-
+          >
             Book Flight
           </button>
         </div>
       </div>
-      
     </>
   );
 }
