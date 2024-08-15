@@ -1,0 +1,23 @@
+/* SearchFlight.css */
+.SelectBox {
+    margin: 10% 5%;
+    width: 35%;
+    font-family: sans-serif;
+    border-color: #d3d824;
+  }
+  
+  .SelectBoxSecondary {
+    margin: 10% 5%;
+    font-family: sans-serif;
+    color: black;
+    border-color: #d3d824;
+    width: 35%;
+  }
+  
+  .DateInput {
+    position: relative;
+    margin-left: 5%;
+    font: 1em sans-serif;
+
+  }
+  
