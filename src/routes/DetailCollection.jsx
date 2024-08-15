@@ -67,16 +67,23 @@ function DetailCollection() {
           </div>
           <div className="form-row">
             <label>No. of people</label>
-            <input name="people" type="number" onChange={handleChange} />
+
+            <input name="people" type="number" onChange={handleChange} min="1" />
           </div>
           <div className="form-row">
             <label>Bags</label>
-            <input name="bags" type="number" onChange={handleChange} />
+            <input name="bags" type="number" onChange={handleChange} min="0" />
           </div>
           <div className="form-row">
-            <label>Class</label>
-            <input name="class" type="text" onChange={handleChange} />
+            <label htmlFor="class">Class</label>
+            <input list="classes" name="class" id="class"  onChange={handleChange} />
+               <datalist id="classes">
+              <option value="First Class" />
+              <option value="Economy" />
+              <option value="Business" />
+              </datalist>
           </div>
+
           <div className="form-row">
             <label>Name</label>
             <input name="name" type="text" onChange={handleChange} />
@@ -91,6 +98,7 @@ function DetailCollection() {
           </div>
           <div className="form-row">
             <label>Total</label>
+
             <input
               name="total"
               type="text"
@@ -98,6 +106,7 @@ function DetailCollection() {
               placeholder="$120000"
               onChange={handleChange}
             />
+
           </div>
           <div className="form-buttons">
             <button

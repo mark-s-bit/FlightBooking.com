@@ -83,7 +83,8 @@ body {
 }
 
 .form-row input[type="text"],
-.form-row input[type="number"] {
+.form-row input[type="number"]
+.form-row input[list="classes"] {
   flex-basis: 58%;
   padding: 12px;
   border: 2px solid #d3d824;
@@ -95,9 +96,16 @@ body {
 
 .form-row input.total {
   font-weight: bold;
-  color: black;
+  color: white !important; /* Force the color to white */
   text-align: right;
+  background-color: #2b2b2b; /* Ensure background is consistent */
+  border: 2px solid #d3d824; /* Ensure border is consistent */
+  padding: 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
+
+
 
 .form-buttons {
   display: flex;
@@ -122,4 +130,13 @@ body {
 .form-buttons button:not(.back-btn) {
   background-color: #d3d824;
   color: black;
+}
+.form-row input[list="classes"] {
+  flex-basis: 58%;
+  padding: 12px;
+  border: 2px solid #d3d824;
+  border-radius: 8px;
+  background-color: #2b2b2b;
+  color: white;
+  box-sizing: border-box;
 }
