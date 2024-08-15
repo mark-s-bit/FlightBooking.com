@@ -1,9 +1,17 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Ticket.css';  
 
 function Ticket() {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate('/'); // Navigate to the home page
+  };
+
   return (
     <div className="container">
+      <h1 className="ticket-title">Your Ticket</h1>
       <div className="ticket-form">
         <div className="form-row-horizontal">
           <input type="text" placeholder="From" />
@@ -29,7 +37,7 @@ function Ticket() {
           <input type="text" placeholder="$120000" className="total" />
         </div>
         <div className="form-buttons">
-          <button className="countdown-btn">Count Down</button>
+          <button className="countdown-btn" onClick={handleHomeClick}>Home</button>
         </div>
         <div className="cancel-text">
           <p>To Cancel Contact Us {" "}

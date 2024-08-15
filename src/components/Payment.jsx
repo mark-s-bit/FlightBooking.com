@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Payment.css";
+import { useNavigate } from 'react-router-dom';
 
 function Payment() {
   const [loading, setLoading] = useState(false);
@@ -15,6 +16,13 @@ function Payment() {
       setLoading(false);
       setSuccess(true);
     }, 2000); // Simulate 2 seconds delay for payment processing
+
+    
+  };
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate('/'); // Navigate to the home page
   };
 
   return (
@@ -69,14 +77,20 @@ function Payment() {
           </button>
         </form>
       ) : (
+        <>
         <div className="success-message">
           <div className="success-icon">&#10004;</div>
           <p>Booked Successful!</p>
         </div>
+        <div className="form-buttons">
+          <button className="countdown-btn" onClick={handleHomeClick}>Home</button>
+        </div>
+      </>
       )}
       <div className="security-info">
         <p>Your payment is secure with us.</p>
       </div>
+      
       {loading && (
         <div className="spinner">
           <p>Booking...</p>
