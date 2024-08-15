@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Details.css";
 import logo from "../assets/logoo.png";
 import NavigationBar from "../components/NavigationBar";
@@ -16,9 +16,39 @@ function DetailCollection() {
     name: "",
     phone: "",
     passport: "",
-    total: "$120000",
+    total: "",
   });
   const [isModalOpen, setModalOpen] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [flights, setFlights] = useState([]);
+
+  useEffect(() => {
+    const fetchFlights = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/flights");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setFlights(data);
+        if (data.length > 0) {
+          setFormData({
+            from: data[0].from,
+            to: data[0].to,
+            date: data[0].date,
+            total: `$${data[0].cost}`,
+          });
+        }
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchFlights();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,14 +61,17 @@ function DetailCollection() {
   };
 
   const back = useNavigate();
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
   return (
     <div>
       <nav className="navbar">
-       <NavLink to={'/'} >
-        <div className="navbar-brand">
-          <img src={logo} alt="TravelTicketPro Logo" className="nav-logo" />
-          <span className="brand-name">TravelTicketPro</span>
-        </div>
+        <NavLink to={'/'}>
+          <div className="navbar-brand">
+            <img src={logo} alt="TravelTicketPro Logo" className="nav-logo" />
+            <span className="brand-name">TravelTicketPro</span>
+          </div>
         </NavLink>
       </nav>
       <form onSubmit={handleSubmit} className="Detailcontainer">
@@ -47,27 +80,26 @@ function DetailCollection() {
             <input
               name="from"
               type="text"
-              placeholder="From"
-              onChange={handleChange}
+              value={formData.from}
+              readOnly
             />
             <input
               name="to"
               type="text"
-              placeholder="To"
-              onChange={handleChange}
+              value={formData.to}
+              readOnly
             />
           </div>
           <div className="form-row">
             <input
               name="date"
               type="date"
-              placeholder="24 Aug 2024 1200hrs"
-              onChange={handleChange}
+              value={formData.date}
+              readOnly
             />
           </div>
           <div className="form-row">
             <label>No. of people</label>
-
             <input name="people" type="number" onChange={handleChange} min="1" />
           </div>
           <div className="form-row">
@@ -76,12 +108,12 @@ function DetailCollection() {
           </div>
           <div className="form-row">
             <label htmlFor="class">Class</label>
-            <input list="classes" name="class" id="class"  onChange={handleChange} />
-               <datalist id="classes">
+            <input list="classes" name="class" id="class" onChange={handleChange} />
+            <datalist id="classes">
               <option value="First Class" />
               <option value="Economy" />
               <option value="Business" />
-              </datalist>
+            </datalist>
           </div>
 
           <div className="form-row">
@@ -98,15 +130,13 @@ function DetailCollection() {
           </div>
           <div className="form-row">
             <label>Total</label>
-
             <input
               name="total"
               type="text"
               className="total"
-              placeholder="$120000"
-              onChange={handleChange}
+              value={formData.total}
+              readOnly
             />
-
           </div>
           <div className="form-buttons">
             <button
