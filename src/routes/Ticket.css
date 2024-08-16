@@ -16,62 +16,36 @@ body {
   align-items: center;
 }
 
-.ticket-form {
+.about-title {
+  color: #d3d824;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-content {
   background-color: #333;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.form-row-horizontal {
-  display: flex;
-  gap: 10px;
+.about-content p {
+  margin: 0 0 15px;
+  line-height: 1.6;
 }
 
-.form-row-horizontal input[type="text"] {
-  flex: 1;
-  padding: 12px;
-  border: 2px solid #d3d824;
-  border-radius: 8px;
-  background-color: #2b2b2b;
-  color: white;
-  box-sizing: border-box;
+.about-content a {
+  color: #d3d824;
+  text-decoration: none;
 }
 
-.form-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.form-row label {
-  flex-basis: 40%;
-  color: white;
-  font-size: 14px;
-  text-align: left;
-}
-
-.form-row input[type="text"],
-.form-row input[type="number"] {
-  flex-basis: 58%;
-  padding: 12px;
-  border: 2px solid #d3d824;
-  border-radius: 8px;
-  background-color: #2b2b2b;
-  color: white;
-  box-sizing: border-box;
-}
-
-.form-row input.total {
-  font-weight: bold;
-  color: black;
-  text-align: right;
+.about-content a:hover {
+  text-decoration: underline;
 }
 
 .form-buttons {
@@ -89,10 +63,4 @@ body {
   font-weight: bold;
   cursor: pointer;
   border: none;
-}
-
-.cancel-text {
-  text-align: center;
-  margin-top: 15px;
-  color: #888;
 }

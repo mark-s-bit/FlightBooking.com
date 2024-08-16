@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./SearchFlight.css"; // Import the CSS file
 
-function SearchFlight({ flights,filterBySearch }) {
+function SearchFlight({ flights, filterBySearch }) {
   const [searching, setSearching] = useState({
     from: "",
     to: "",
@@ -26,6 +26,7 @@ function SearchFlight({ flights,filterBySearch }) {
         list="from"
         name="from"
         id="class"
+        style={{ marginRight: "10%" }}
       />
       <datalist id="from">
         {flights.length > 0
@@ -50,12 +51,12 @@ function SearchFlight({ flights,filterBySearch }) {
           : "No flights"}
       </datalist>
 
-      <input
+      {/* <input
         onChange={handleChange}
         className="DateInput"
         type="date"
         name="date"
-      ></input>
+      ></input> */}
     </div>
   );
 }

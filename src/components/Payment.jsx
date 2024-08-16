@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Payment.css";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function Payment() {
   const [loading, setLoading] = useState(false);
@@ -16,19 +16,17 @@ function Payment() {
       setLoading(false);
       setSuccess(true);
     }, 2000); // Simulate 2 seconds delay for payment processing
-
-    
   };
   const navigate = useNavigate();
 
   const handleHomeClick = () => {
-    navigate('/'); // Navigate to the home page
+    navigate("/"); // Navigate to the home page
   };
 
   return (
     <div className="container">
       <div className="payment-header">
-        <h1>Complete Your Payment</h1>
+        <h1>{!success ? "Complete Your Payment" : "Completed Your payment"}</h1>
       </div>
       {!success ? (
         <form className="payment-form" onSubmit={handleSubmit}>
@@ -73,24 +71,26 @@ function Payment() {
             />
           </div>
           <button type="submit" className="btn-primary" disabled={loading}>
-            {loading ? "Processing..." : "Pay Now"}
+            {loading ? "Processing Payment..." : "Pay Now"}
           </button>
         </form>
       ) : (
         <>
-        <div className="success-message">
-          <div className="success-icon">&#10004;</div>
-          <p>Booked Successful!</p>
-        </div>
-        <div className="form-buttons">
-          <button className="countdown-btn" onClick={handleHomeClick}>Home</button>
-        </div>
-      </>
+          <div className="success-message">
+            <div className="success-icon">&#10004;</div>
+            <p>Booked Successful!</p>
+          </div>
+          <div className="form-buttons">
+            <button className="countdown-btn" onClick={handleHomeClick}>
+              Home
+            </button>
+          </div>
+        </>
       )}
       <div className="security-info">
         <p>Your payment is secure with us.</p>
       </div>
-      
+
       {loading && (
         <div className="spinner">
           <p>Booking...</p>

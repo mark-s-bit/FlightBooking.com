@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import './NavigationBar.css'; // Import the CSS file
+import "./NavigationBar.css"; // Import the CSS file
 
 function NavigationBar() {
   return (
@@ -17,7 +17,7 @@ function NavigationBar() {
           <li>Home</li>
         </NavLink>
         <NavLink to={"/ticket"} className="nav-link">
-          <li>Ticket</li>
+          <li>About</li>
         </NavLink>
       </ul>
     </nav>
