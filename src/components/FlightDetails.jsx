@@ -32,7 +32,11 @@ function FlightDetails({ flights }) {
                   </h4>
 
                   <p style={{ color: "white" }} className="card-text">
-                    Starts From:${flight.cost}
+                    <b>Date:</b>
+                    {flight.date}
+                  </p>
+                  <p style={{ color: "white" }} className="card-text">
+                    <b>Starts From:</b>${flight.cost} Only
                   </p>
                   <button
                     onClick={() => onBookFlight(flight.id)}

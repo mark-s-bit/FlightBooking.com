@@ -5,7 +5,8 @@ import "./DisplayAvailableFlights.css";
 import { useState, useEffect } from "react";
 
 function DispalayAvailableFlights() {
-  const url = "http://localhost:3000/flights/";
+  const url =
+  "https://gist.githubusercontent.com/johnson-Omwoyo/b77aa49abb32f3db912d8c3a355d13f8/raw/2de7e9f14dfcd4524c204303de8420571427f508/db.json";
   const [flights, setFlights] = useState([]);
   let filterd;
 
@@ -14,7 +15,7 @@ function DispalayAvailableFlights() {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setFlights(data);
+        setFlights(data.flights);
       } catch (error) {
         console.error(error);
       }

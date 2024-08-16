@@ -25,7 +25,7 @@ const Modal = ({ isOpen, onClose, formData }) => {
       <div className="modal">
         <h2>{isLoading ? "" : "Booking Details"}</h2>
         {isLoading ? (
-          <div className="spinner">Booking...</div>
+          <div className="spinner">Checking Details...</div>
         ) : (
           <div className="booking-details">
             <div className="detail-item">

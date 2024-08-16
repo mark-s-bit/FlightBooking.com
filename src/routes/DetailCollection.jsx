@@ -24,15 +24,18 @@ function DetailCollection() {
   const [flights, setFlights] = useState({});
   const location = useLocation();
   const id = location.state;
+  const url =
+    "https://gist.githubusercontent.com/johnson-Omwoyo/b77aa49abb32f3db912d8c3a355d13f8/raw/2de7e9f14dfcd4524c204303de8420571427f508/db.json";
+
   useEffect(() => {
     const fetchFlights = async () => {
       try {
-        const response = await fetch("http://localhost:3000/flights");
+        const response = await fetch(url);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        const tis = data.filter((dat) => dat.id == id);
+        const tis = data.flights.filter((dat) => dat.id == id);
         console.log(tis);
         setFlights();
         if (tis.length > 0) {
